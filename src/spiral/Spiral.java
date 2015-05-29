@@ -27,7 +27,7 @@ public class Spiral {
     }
 
     private void drawTop(int x, int y, int size) {
-        for (int counter = 0; counter < size; counter++, x++) {
+        for (int counter = 0; counter < size; counter++) {
             board[x][y] = '*';
             if (counter != size - 1) {
                 x++;
