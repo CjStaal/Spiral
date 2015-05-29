@@ -29,12 +29,10 @@ public class Spiral {
     private void drawTop(int x, int y, int size) {
         for (int counter = 0; counter < size; counter++) {
             board[x][y] = '*';
-            if (counter != size - 1) {
                 x++;
-            }
         }
         if (--size > 0) {
-            this.drawRight(x, ++y, size);
+            this.drawRight(--x, ++y, size);
         } else {
             printBoard();
         }
@@ -43,12 +41,10 @@ public class Spiral {
     private void drawRight(int x, int y, int size) {
         for (int counter = 0; counter < size; counter++) {
             board[x][y] = '*';
-            if (counter != size - 1) {
                 y++;
-            }
         }
         if (--size > 0) {
-            this.drawBottom(--x, y, size);
+            this.drawBottom(--x, --y, size);
         } else {
             printBoard();
         }
@@ -57,12 +53,10 @@ public class Spiral {
     private void drawBottom(int x, int y, int size) {
         for (int counter = 0; counter < size; counter++) {
             board[x][y] = '*';
-            if (counter != size - 1) {
                 x--;
-            }
         }
         if (--size > 0) {
-            this.drawLeft(x, --y, size);
+            this.drawLeft(++x, --y, size);
         } else {
             printBoard();
         }
@@ -71,12 +65,10 @@ public class Spiral {
     private void drawLeft(int x, int y, int size) {
         for (int counter = 0; counter < size; counter++) {
             board[x][y] = '*';
-            if (counter != size - 1) {
                 y--;
-            }
         }
         if (--size > 0) {
-            this.drawTop(++x, y, size);
+            this.drawTop(++x, ++y, size);
         } else {
             printBoard();
         }
@@ -84,8 +76,8 @@ public class Spiral {
 
     private void printBoard() {
         for (int y = 0; y < board.length; y++) {
-            for (int x = 0; x < board.length; x++) {
-                System.out.print(board[x][y]);
+            for (char[] board1 : board) {
+                System.out.print(board1[y]);
             }
             System.out.println();
         }
