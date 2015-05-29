@@ -28,8 +28,7 @@ public class Spiral {
 
     private void drawTop(int x, int y, int size) {
         for (int counter = 0; counter < size; counter++) {
-            board[x][y] = '*';
-                x++;
+            board[x++][y] = '*';
         }
         if (--size > 0) {
             this.drawRight(--x, ++y, size);
@@ -40,8 +39,7 @@ public class Spiral {
 
     private void drawRight(int x, int y, int size) {
         for (int counter = 0; counter < size; counter++) {
-            board[x][y] = '*';
-                y++;
+            board[x][y++] = '*';
         }
         if (--size > 0) {
             this.drawBottom(--x, --y, size);
@@ -52,8 +50,7 @@ public class Spiral {
 
     private void drawBottom(int x, int y, int size) {
         for (int counter = 0; counter < size; counter++) {
-            board[x][y] = '*';
-                x--;
+            board[x--][y] = '*';
         }
         if (--size > 0) {
             this.drawLeft(++x, --y, size);
@@ -64,8 +61,7 @@ public class Spiral {
 
     private void drawLeft(int x, int y, int size) {
         for (int counter = 0; counter < size; counter++) {
-            board[x][y] = '*';
-                y--;
+            board[x][y--] = '*';
         }
         if (--size > 0) {
             this.drawTop(++x, ++y, size);
